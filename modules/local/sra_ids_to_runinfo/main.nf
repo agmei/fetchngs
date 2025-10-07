@@ -25,9 +25,9 @@ process SRA_IDS_TO_RUNINFO {
         ${id}.runinfo.tsv \\
         $metadata_fields
 
-    #cat <<-END_VERSIONS > versions.yml
-    #"${task.process}":
-    #    python3: \$(python3 --version | sed 's/Python //g')
-    #END_VERSIONS
+    cat <<-END_VERSIONS > versions.yml
+    "${task.process}":
+        python: \$(python --version | sed 's/Python //g')
+    END_VERSIONS
     """
 }
